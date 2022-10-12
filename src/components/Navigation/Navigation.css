@@ -1,14 +1,8 @@
-*, ::after, ::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* MOBLE SCREEN */
 #navigation {
-    font-family: 'Garamond';
-    color: #000000;
+    font-family: 'EB Garamond', serif;
     font-size: 25.6348px;
-
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +21,6 @@
 }
 
 .navigation-list {
-
     list-style: none;
     font-style: normal;
     font-weight: 400;
@@ -38,21 +31,27 @@
     justify-content: center;
 }
 
-@media all and (min-width:610px) {
+/* DESKTOP AND TABLET SCREEN */
+@media all and (min-width:645px) {
 
     #full-name {
-        padding: 50px 0 210px 50px;
+        padding: 50px 0 0 50px;
+        padding-bottom: min(13vw, 110px);
         align-self: start;
     }
 
     .contacts {
         display: block;
     }
+    #navigation {
+        margin-bottom: 200px;
+    }
+
+    .navigation-list, #full-name  {
+        font-size: clamp(25.6348px, 4vw, 35.84px);
+    }
 
     .navigation-list {
-        font-size: 35.84px;
-        /* font-size: 200.84px; */
         gap: 38px;
     }
-    
 }

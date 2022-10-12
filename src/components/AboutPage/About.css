@@ -1,0 +1,59 @@
+#about-page{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+#about h2, #contacts h2, #skills h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 44.93px;
+    margin-bottom: 70px;
+}
+
+#contacts ul {
+    list-style: none;
+    gap: 50px;
+}
+
+#skills {
+    margin-top: 70px;
+}
+
+#skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%
+}
+
+#about p, #contacts ul, #skills ul {
+    display: flex;
+    flex-direction: column;
+    font-size: 35.839px;
+}
+
+#skills ul{
+    list-style-position: inside;
+    gap: 15px;
+}
+
+@media all and (min-width:645px) {
+   
+    #about-details {
+        width: 65%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15%;
+    }
+
+    #skills {
+        width: 65%;
+    }
+    
+}
