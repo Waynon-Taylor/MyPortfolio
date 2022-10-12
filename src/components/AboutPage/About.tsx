@@ -6,13 +6,14 @@ const About = () => {
             <div id='about-page'>
                 <section id='about-details'>
                     <div id='about'>
-                        <h2>Who am i?</h2>
+                        <h2>Who am i ?</h2>
                         <div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetdol.
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetdol. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores dignissimos m
                             </p>
                             <p>
-                                ore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.
+                                ore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis no
+                                Lorem ipsum dolor sit amet 
                             </p>
                         </div>
                     </div>
@@ -20,10 +21,23 @@ const About = () => {
                         <h2>Contacts</h2>
                         <div>
                             <ul>
-                                <li>Linkedin</li>
-                                <li>Github</li>
-                                <li>Behance</li>
-                                <li>Gmail</li>
+                                <li>
+                                    <a target= "_blank" href="https://www.linkedin.com/in/wayon-taylor-331b1a224/">Linkedin</a>
+                                    <a target= "_blank" href="https://www.linkedin.com/in/wayon-taylor-331b1a224/">linkedin.com/wayontaylor</a>
+                                </li>
+
+                                <li>
+                                    <a target= "_blank" href="https://github.com/The-taylord">Github</a>
+                                    <a target= "_blank" href="https://github.com/The-taylord">github.com/The-taylord</a>
+                                </li>
+                                <li>
+                                    <a target= "_blank" href="https://www.behance.net/wayontaylors?tracking_source=search_users|wayon%20taylor">Behance</a>
+                                    <a target= "_blank" href="https://www.behance.net/wayontaylors?tracking_source=search_users|wayon%20taylor">behance.net/wayontaylor</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:waynontaylor@gmail.com">Gmail</a> 
+                                    <a href="mailto:waynontaylor@gmail.com">waynontaylor@gmail.com</a> 
+                                </li>
                             </ul>
                         </div>
                     </section>
