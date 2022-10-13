@@ -11,7 +11,7 @@
 #full-name {
     padding: 54px 0;
     font-size: 1em;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .contacts {
@@ -32,10 +32,10 @@
 @media all and (min-width:695px) {
 
     #navigation {
-        margin-bottom: clamp(100px, 14.5vw, 200px);
+        margin-bottom: clamp(100px, 17.5vw, 350px);
     }
 
-    .navigation-list, #full-name {
+    .navigation-list{
         font-size: clamp(1em, 3.8vw, 44.93px);
     }
 
@@ -44,8 +44,9 @@
     }
 
     #full-name {
-        padding: 50px 0 0 50px;
-        padding-bottom: min(10vw, 110px);
+        font-size: 0.7em;
+        padding: 40px 0 0 90px;
+        padding-bottom: min(10vw, 640px);
         align-self: start;
     }
 

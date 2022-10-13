@@ -17,6 +17,7 @@ const About = () => {
                             </p>
                         </div>
                     </div>
+                    <hr />
                     <section id='contacts' >
                         <h2>Contacts</h2>
                         <div>
@@ -44,7 +45,7 @@ const About = () => {
                 </section>
                 <div id='skills'>
                     <h2>Skills</h2>
-                    <div id='skills-container'>
+                    <div id='skill-lists-container'>
                         <ul>
                             <li>Typescript</li>
                             <li>React.js</li>
@@ -53,6 +54,7 @@ const About = () => {
                             <li>HTML</li>
                             <li>CSS</li>
                         </ul>
+                        <hr />
                         <ul>
                             <li>Adobe Illustrator</li>
                             <li>Adobe Photoshop</li>
@@ -61,6 +63,7 @@ const About = () => {
                             <li>Git & Github</li>
                             <li>Jest.js</li>
                         </ul>
+                        <hr />
                         <ul>
                             <li>Python</li>
                             <li>SQL</li>
