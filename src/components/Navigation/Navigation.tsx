@@ -7,7 +7,7 @@ const Navigation = () => {
             <div id='navigation-container'>
                 <nav id="navigation">
                     <div id='full-name'>
-                        <p><a href="#"><span className='first-name'>Wayon</span> Taylor</a></p>
+                        <p><a href="#"><span className='first-name'>Wayon Taylor</span> </a></p>
                     </div>
                     <ul className="navigation-list">
                         <li><a href="#">About</a> </li>

@@ -22,20 +22,20 @@ const About = () => {
                         <div>
                             <ul>
                                 <li>
-                                    <a target= "_blank" href="https://www.linkedin.com/in/wayon-taylor-331b1a224/">Linkedin</a>
+                                    <p>Linkedin</p>
                                     <a target= "_blank" href="https://www.linkedin.com/in/wayon-taylor-331b1a224/">linkedin.com/wayontaylor</a>
                                 </li>
 
                                 <li>
-                                    <a target= "_blank" href="https://github.com/The-taylord">Github</a>
+                                    <p>Github</p>
                                     <a target= "_blank" href="https://github.com/The-taylord">github.com/The-taylord</a>
                                 </li>
                                 <li>
-                                    <a target= "_blank" href="https://www.behance.net/wayontaylors?tracking_source=search_users|wayon%20taylor">Behance</a>
+                                    <p>Behance</p>
                                     <a target= "_blank" href="https://www.behance.net/wayontaylors?tracking_source=search_users|wayon%20taylor">behance.net/wayontaylor</a>
                                 </li>
                                 <li>
-                                    <a href="mailto:waynontaylor@gmail.com">Gmail</a> 
+                                    <a>Gmail</a> 
                                     <a href="mailto:waynontaylor@gmail.com">waynontaylor@gmail.com</a> 
                                 </li>
                             </ul>
