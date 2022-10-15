@@ -6,20 +6,20 @@ const About = () => {
             <div id='about-page'>
                 <section id='about-details'>
                     <div id='about'>
-                        <h2>Who am i ?</h2>
-                        <div>
+                        <span id='W'>W</span><h2>HO AM I ?.</h2>
+                        <div id='about-description'>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetdol. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores dignissimos m
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetdol. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores dignissimos.
                             </p>
                             <p>
                                 ore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis no
-                                Lorem ipsum dolor sit amet 
+                                Lorem ipsum dolor sit amet.
                             </p>
                         </div>
                     </div>
                     <hr />
                     <section id='contacts' >
-                        <h2>Contacts</h2>
+                        <h2>CONTACTS</h2>
                         <div>
                             <ul>
                                 <li>
@@ -29,7 +29,7 @@ const About = () => {
 
                                 <li>
                                     <p>Github</p>
-                                    <a target= "_blank" href="https://github.com/The-taylord">github.com/The-taylord</a>
+                                    <a target= "_blank" href="https://github.com/The-taylord">github.com/the-taylord</a>
                                 </li>
                                 <li>
                                     <p>Behance</p>
@@ -44,7 +44,7 @@ const About = () => {
                     </section>
                 </section>
                 <div id='skills'>
-                    <h2>Skills</h2>
+                    <h2>SKILLS</h2>
                     <div id='skill-lists-container'>
                         <ul>
                             <li>Typescript</li>

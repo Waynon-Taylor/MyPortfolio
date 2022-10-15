@@ -6,7 +6,7 @@ const Footer = () => {
             <footer id="footer">
                 <hr />
                 <div id="footer-info">
-                    <p>© 2022 Designed & Developed by Wayon Taylor.</p>
+                    <a target='_blank' href="https://github.com/The-taylord">© 2022 Designed & Developed by Wayon Taylor.</a>
                 </div>
             </footer>
         </>

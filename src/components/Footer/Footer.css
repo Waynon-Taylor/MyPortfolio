@@ -1,8 +1,12 @@
-#footer{
-    font-size: min(4vw, 25px);
-    margin-top: 2.3em;
+#footer {
+    font-size: min(3vw, 25px);
+    margin-top: 4.3em;
 }
 
+#footer a {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(18, 53, 253);
+}
 #footer-info {
     width: max-content;
     margin: 1.5em auto;

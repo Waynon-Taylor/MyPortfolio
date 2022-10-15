@@ -1,15 +1,17 @@
 import Navigation from './components/Navigation/Navigation'
 import About from './components/AboutPage/About'
+import Project from './components/ProjectPage/Projects/Projects';
 import Footer from './components/Footer/Footer'
-
 import './index.css'
+
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Navigation />
-      <About />
+      {/* <About /> */}
+      < Project/>
       <Footer />
-    </div>
+    </main>
   );
 }
 
