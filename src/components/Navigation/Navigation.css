@@ -2,18 +2,19 @@
 #navigation {
     font-family: 'Times New Roman';
     font-size: min(7.2vw, 25.6348px);
-    margin-bottom: min(29vw, 110px);
+    border-bottom: solid 1px grey;
+
+    padding: min(10vw, 5em) 0;
+    margin-bottom: min(15vw, 110px);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 90px;
+    justify-content: center;
 }
 
 .contacts {
     display: none;
 }
 
-.navigation-list li a{
+.navigation-list li a {
     color: rgb(0, 0, 0);
 }
 
@@ -24,11 +25,12 @@
     font-size: 1em;
     display: flex;
     justify-content: center;
-    gap: 34px;
+    gap: 18%;
 }
 
 /* DESKTOP*/
 @media all and (min-width:1242px) {
+
     /* small tweak */
     #navigation {
         margin-bottom: clamp(100px, 17.5vw, 200px);
@@ -38,15 +40,10 @@
 /* DESKTOP AND TABLET */
 @media all and (min-width:695px) {
     .navigation-list {
-        font-size: clamp(1em, 3.8vw, 44.93px);
-    }
-
-    .navigation-list {
-        gap: 38px;
+        font-size: clamp(1em, 3.8vw, 35.93px);
     }
 
     .contacts {
         display: block;
     }
-
 }

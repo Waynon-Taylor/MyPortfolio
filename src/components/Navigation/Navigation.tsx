@@ -12,11 +12,9 @@ const Navigation = () => {
                         <li className='contacts'><a href="#">Contacts</a></li>
                         <li><a href="#">Resume</a></li>
                     </ul>
-                    <div id="select-slider"></div>
                 </nav>
             </div>
         </>
     )
 }
-
 export default Navigation

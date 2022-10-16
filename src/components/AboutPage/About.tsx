@@ -6,7 +6,7 @@ const About = () => {
             <div id='about-page'>
                 <section id='about-details'>
                     <div id='about'>
-                        <span id='W'>W</span><h2>HO AM I ?.</h2>
+                        <span id='W'>W</span><h2>ho Am I ?.</h2>
                         <div id='about-description'>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetdol. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores dignissimos.
@@ -19,7 +19,7 @@ const About = () => {
                     </div>
                     <hr />
                     <section id='contacts' >
-                        <h2>CONTACTS</h2>
+                        <h2>Get In Touch.</h2>
                         <div>
                             <ul>
                                 <li>
@@ -44,7 +44,7 @@ const About = () => {
                     </section>
                 </section>
                 <div id='skills'>
-                    <h2>SKILLS</h2>
+                    <h2>Skills</h2>
                     <div id='skill-lists-container'>
                         <ul>
                             <li>Typescript</li>
