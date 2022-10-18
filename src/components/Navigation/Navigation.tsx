@@ -7,10 +7,10 @@ const Navigation = () => {
             <div id='navigation-container'>
                 <nav id="navigation">
                     <ul className="navigation-list">
-                        <li><a href="#">About</a> </li>
-                        <li><a href="#">Projects</a> </li>
-                        <li className='contacts'><a href="#">Contacts</a></li>
-                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">about</a> </li>
+                        <li><a href="#">projects</a> </li>
+                        <li className='contacts'><a href="#">contacts</a></li>
+                        <li><a href="#">resume</a></li>
                     </ul>
                 </nav>
             </div>

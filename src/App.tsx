@@ -1,6 +1,6 @@
 import Navigation from './components/Navigation/Navigation'
 import About from './components/AboutPage/About'
-import ProjectItem from './components/ProjectPage/Projects/Projects';
+import ProjectPage from './components/ProjectPage/ProjectPage';
 import Footer from './components/Footer/Footer'
 import './index.css'
 
@@ -9,7 +9,7 @@ function App() {
     <main className="App">
       <Navigation />
       <About />
-      {/* < ProjectItem/> */}
+      {/* < ProjectPage/> */}
       <Footer />
     </main>
   );

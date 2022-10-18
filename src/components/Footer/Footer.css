@@ -2,10 +2,13 @@
     font-size: min(3vw, 25px);
     margin-top: 4.3em;
 }
+#footer hr {
+    border: solid 3px black;
+}
 
 #footer a {
     font-family: 'Poppins', sans-serif;
-    color: rgb(18, 53, 253);
+    color: white;
 }
 #footer-info {
     width: max-content;

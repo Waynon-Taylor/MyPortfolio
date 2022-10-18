@@ -1,14 +1,18 @@
 /* MOBLE SCREEN */
 #about-page {
-    font-size: min(7vw, 45px);
+    font-size: min(7vw, 48px);
     padding: 0 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#about-details hr {
+#about-details hr{
     display: none;
+}
+
+#about-details hr, #skill-lists-container hr{
+    border: solid 2px white;
 }
 
 #about-details {
@@ -20,21 +24,23 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1em;
-    padding-bottom: 1.8em;
+    padding-bottom: 1.4em;
 }
 
 #about #W {
     font-family: 'Poppins', sans-serif;
-    font-size: 6em;
-    color: rgb(18, 53, 253);
+    font-size: 4.5em;
+    color: rgb(255, 255, 255);
     display: inline-block;
     height: 0;
 }
 
 #about h2 {
-    color: rgb(18, 53, 253);
+    color: rgb(255, 255, 255);
     display: inline-block;
-    text-indent: max(-4vw, -17px);
+    text-indent: max(-4vw, -8px);
+    text-indent: -10px;
+    letter-spacing: 0.04em;
 }
 
 #contacts {
@@ -52,11 +58,16 @@
     font-size: 0.798em;
 }
 
+#contacts ul{
+    font-size: 0.77em;
+}
+
+
 #contacts ul li {
     display: flex;
     font-family: 'Poppins', sans-serif;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 #contacts ul li :nth-child(2) {
@@ -65,7 +76,8 @@
 }
 
 #skills h2, #contacts h2, #contacts ul li :nth-child(2) {
-    color: rgb(18, 53, 253);
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.04em;
 }
 #skills {
     width: 100%;
@@ -79,6 +91,7 @@
 }
 
 #skill-lists-container hr:nth-child(3n-2) {
+    /* border: solid 1px black; */
     display: none;
 }
 
@@ -114,7 +127,7 @@
     }
 
     #about-description {
-        height: 370px;
+        height: 400px;
         overflow: auto;
     }
 
@@ -138,6 +151,7 @@
 
     /* small tweak */
     #skill-lists-container hr:nth-child(3n-2) {
+        
         display: block;
     }
 }

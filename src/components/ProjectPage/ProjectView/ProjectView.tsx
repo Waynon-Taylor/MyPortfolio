@@ -1,18 +1,17 @@
-import './ProjectView.css'
 import { Project } from '../projectTypes/projectTypes'
+import './ProjectView.css'
 
 interface Props {
+    project: Project
     children: React.ReactNode
 }
 
-const ProjectView: React.FC<Props> = ({ children }) => {
+const ProjectView: React.FC<Props> = ({ children, project }) => {
 
     return (
         <>
-            {/* <iframe src="" frameBorder="0"></iframe> */}
-
-            {/* <iframe src="" frameBorder="0"></iframe> */}
-            <div>ProjectView</div>
+            {project.toggleProject.viewing_Iframe ? <div>iframe</div> : null}
+            {project.toggleProject.viewing_WireFrame ? <div>wireFrame</div> : null}
             {children}
         </>
     )

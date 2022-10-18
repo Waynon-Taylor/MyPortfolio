@@ -1,54 +1,37 @@
-import { Project } from '../projectTypes/projectTypes'
+import { Project, Action } from '../projectTypes/projectTypes'
 import Buttons from "../Buttons/Buttons"
-
+import ProjectCarousel from './ProjectCarousel'
 interface Props {
     project: Project
     projects: Project[]
-    currentProjectIndex: number
-    setProjects: React.Dispatch<React.SetStateAction<Project[]>>
+    projectIndex: number
+    dispatch: React.Dispatch<Action>
 }
 
-const ProjectViewButtons: React.FC<Props> = ({ project: currentProject, currentProjectIndex, projects, setProjects }) => {
+const ProjectViewButtons: React.FC<Props> = ({ project, projects, dispatch, projectIndex }) => {
 
-    const toggleNextProject = () => {
-
-        setProjects(projects.map((project, projectIndex) => {
-            if (currentProjectIndex === projectIndex) {
-                project.toggleProject = false
-                project.viewdStatus = true
-            }
-
-            if (currentProjectIndex + 1 === projectIndex) {
-                project.toggleProject = true
-                project.viewdStatus = true
-            }
-
-            if (currentProjectIndex === projects.length - 1 && currentProjectIndex === projectIndex) {
-                project.toggleProject = false
-                projects[0].toggleProject = true
-            }
-            return project
-        }))
-    }
-    
-    const closeCurrentProjectView = () => {
-        setProjects(projects.map((project) => {
-            if (currentProject.projectName === project.projectName) {
-                project.toggleProject = false
-            }
-            return project
-        }))
-    }
     return (
         <>
             <div>
                 <button>INFO</button>
                 <Buttons
-                    project={currentProject}
-                    projects={projects}
+                    project={project}
+                    dispatch={dispatch}
                 />
-                <button onClick={toggleNextProject}>NEXT</button>
-                <button onClick={closeCurrentProjectView}>CLOUSE</button>
+                <ProjectCarousel
+                    project={project}
+                    projects={projects}
+                    projectIndex={projectIndex}
+                    dispatch={dispatch}
+                />
+                <button onClick={() => dispatch(
+                    {
+                        type: 'CLOSE_FRAME',
+                        payload: {
+                            ...project,
+                            toggleProject: { viewing_Iframe: false, viewing_WireFrame: false }
+                        }
+                    })}>CLOUSE</button>
             </div>
         </>
     )

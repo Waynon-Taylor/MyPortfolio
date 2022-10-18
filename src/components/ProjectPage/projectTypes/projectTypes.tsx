@@ -4,8 +4,13 @@ export type ProjectLinks = {
     REPO: string
 }
 
+export type ToggleProject = {
+    viewing_Iframe: boolean,
+    viewing_WireFrame: boolean
+}
+
 export interface Project {
-    toggleProject:boolean
+    toggleProject: ToggleProject
     viewdStatus: boolean
     projectImage: string
     projectLinks: ProjectLinks
@@ -13,3 +18,17 @@ export interface Project {
     projectDescription: string
     projectTools: string
 }
+
+export type Action = {
+    type: string,
+    payload: Project | Project[]
+} | any
+
+
+// export interface Props {
+//     project?: Project
+//     projects?: Project[]
+//     projectIndex?: number
+//     dispatch?: React.Dispatch<Action>
+//     children?: React.ReactNode
+// }
