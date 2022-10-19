@@ -1,4 +1,4 @@
-import { Project } from "../components/ProjectPage/projectTypes/projectTypes"
+import { Project } from "../@types-projectTypes/projectTypes"
 
 
 const projectsList: Project[] = [

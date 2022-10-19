@@ -1,15 +1,15 @@
 import Navigation from './components/Navigation/Navigation'
-import About from './components/AboutPage/About'
-import ProjectPage from './components/ProjectPage/ProjectPage';
+import About from './pages/AboutPage/About'
+import ProjectPage from './pages/ProjectPage/ProjectPage';
 import Footer from './components/Footer/Footer'
-import './index.css'
+import './assets/index.css'
 
 function App() {
   return (
     <main className="App">
       <Navigation />
-      <About />
-      {/* < ProjectPage/> */}
+      {/* <About /> */}
+      < ProjectPage/>
       <Footer />
     </main>
   );

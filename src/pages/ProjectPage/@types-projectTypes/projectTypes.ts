@@ -21,14 +21,13 @@ export interface Project {
 
 export type Action = {
     type: string,
-    payload: Project | Project[]
-} | any
+    payload: Project[]
+}
 
 
-// export interface Props {
-//     project?: Project
-//     projects?: Project[]
-//     projectIndex?: number
-//     dispatch?: React.Dispatch<Action>
-//     children?: React.ReactNode
-// }
+export interface Props {
+    project: Project
+    projects: Project[]
+    currentProjectIndex: number
+    dispatch: React.Dispatch<Action>
+}
