@@ -1,4 +1,5 @@
 import { Project } from "../@types-projectTypes/projectTypes"
+import projectImg from '../../../assets/images/lets go to school-.jpg'
 
 
 const projectsList: Project[] = [
@@ -8,9 +9,10 @@ const projectsList: Project[] = [
             viewing_WireFrame: false
         },
         viewdStatus: false,
-        projectImage: '#',
+        projectImage: projectImg,
         projectLinks: {
-            WIREFRAME: '#',
+            IFRAME: '',
+            WIREFRAME: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F17SnzGzveTdpBh1GET3pHr%2FPortfolio%3Fnode-id%3D0%253A1',
             URL: '#',
             REPO: '#'
         },
@@ -24,10 +26,11 @@ const projectsList: Project[] = [
             viewing_WireFrame: false
         },
         viewdStatus: false,
-        projectImage: '#',
+        projectImage: projectImg,
         projectLinks: {
+            IFRAME: 'https://task-app-9f5a2.firebaseapp.com/',
             WIREFRAME: '#',
-            URL: '#',
+            URL: 'https://task-app-9f5a2.firebaseapp.com/',
             REPO: '#'
         },
         projectName: 'Portfolio-2',

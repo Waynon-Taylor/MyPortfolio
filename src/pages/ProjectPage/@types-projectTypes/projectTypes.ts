@@ -1,4 +1,5 @@
 export type ProjectLinks = {
+    IFRAME: string,
     WIREFRAME: string,
     URL: string,
     REPO: string
@@ -23,7 +24,6 @@ export type Action = {
     type: string,
     payload: Project[]
 }
-
 
 export interface Props {
     project: Project

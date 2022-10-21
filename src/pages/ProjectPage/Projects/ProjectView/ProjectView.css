@@ -1,0 +1,35 @@
+#project-view-buttons, #project-view {
+    position: fixed;
+}
+
+#project-view {
+    background-color: white;
+    height: 100vh;
+    inset: 0;
+}
+
+#project-view iframe {
+    overflow: scroll;
+    width: 100%;
+    height: 93vh;
+}
+
+#project-view-buttons {
+    background-color: rgb(36, 36, 36);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    inset: auto 0 0 0;
+}
+
+#project-view-buttons button {
+    color: black;
+}
+
+#project-details {
+    background-color: black;
+    width: 40%;
+    position:absolute;
+    inset: 300px 150px;
+    z-index: 2;
+}

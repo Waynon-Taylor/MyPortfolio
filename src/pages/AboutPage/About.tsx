@@ -1,6 +1,6 @@
 import './About.css'
 
-const About = () => {
+const About: React.FC = () => {
     return (
         <>
             <div id='about-page'>

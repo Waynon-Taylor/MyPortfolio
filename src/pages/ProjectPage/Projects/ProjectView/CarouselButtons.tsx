@@ -1,6 +1,6 @@
 import { Project, Props } from '../../@types-projectTypes/projectTypes'
 
-const ProjectCarouselMode = (projects: Project[], currentProject: Project,
+const toggleCarouselMode = (projects: Project[], currentProject: Project,
     nextProjectIndex: number, lastProjectIndex: number) => {
 
     return projects.map((project, ProjectIndex) => {
@@ -22,20 +22,20 @@ const ProjectCarouselMode = (projects: Project[], currentProject: Project,
     })
 }
 
-const ProjectCarouselButtons: React.FC<Props> = ({ project, projects, dispatch, currentProjectIndex }) => {
+const CarouselButtons: React.FC<Props> = ({ project, projects, dispatch, currentProjectIndex }) => {
 
     return (
         <>
             <button onClick={() => dispatch({
                 type: 'PREV',
-                payload: ProjectCarouselMode(projects, project, currentProjectIndex - 1, projects.length - 1)
-            })}>PREV</button>
+                payload: toggleCarouselMode(projects, project, currentProjectIndex - 1, projects.length - 1)
+            })}>{'<'}</button>
 
             <button onClick={() => dispatch({
                 type: 'NEXT',
-                payload: ProjectCarouselMode(projects, project, currentProjectIndex + 1, 0)
-            })}>NEXT</button>
+                payload: toggleCarouselMode(projects, project, currentProjectIndex + 1, 0)
+            })}>{'>'}</button>
         </>
     )
 }
-export default ProjectCarouselButtons
+export default CarouselButtons

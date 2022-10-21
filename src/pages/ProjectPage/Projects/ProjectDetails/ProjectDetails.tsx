@@ -1,6 +1,5 @@
-
+import './ProjectDetails.css'
 import { Project } from "../../@types-projectTypes/projectTypes"
-
 interface Props {
     project: Project
 }

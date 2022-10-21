@@ -14,41 +14,41 @@ const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
 
     return (
         <>
-            <section id='projects-page'>
-                {projects.map((project, currentProjectIndex) => {
-                    return (
-                        < figure >
+            <main id='projects-container'>
+                <section id='projects'>
 
-                            <a className={`${project.viewdStatus ? 'viewd' : ''} project-img`}
-                                href="#"
-                                onClick={() => dispatch({
-                                    type: 'LOAD_IFRAME',
-                                    payload: toggleProjectViewd(project, projects, true, false)
-                                })}>
-                                <img src="#" alt="projectimage" />
-                            </a>
+                    {projects.map((project, currentProjectIndex) => {
+                     return (
+                            < figure key={project.projectName}>
 
-                            <figcaption>
+                                <a style={{ display: 'block' }} className={`${project.viewdStatus ? 'viewd' : ''} project-img`}
+                                    onClick={() => dispatch({
+                                        type: 'LOAD_IFRAME',
+                                        payload: toggleProjectViewd(project, projects, true, false)
+                                    })}>
+                                    <img src={project.projectImage} alt="Project Image" />
+                                </a>
 
-                                <Buttons
-                                    project={project}
-                                    projects={projects}
-                                    dispatch={dispatch} />
-                                <ProjectDetails
-                                    project={project} />
-
-                                {project.toggleProject.viewing_Iframe ||
-                                    project.toggleProject.viewing_WireFrame ?
-                                    <ProjectView
+                                <figcaption>
+                                    <Buttons
                                         project={project}
                                         projects={projects}
-                                        currentProjectIndex={currentProjectIndex}
-                                        dispatch={dispatch} /> : null}
-                            </figcaption>
-                        </figure>
-                    )
-                })}
-            </section>
+                                        dispatch={dispatch} />
+                                    <ProjectDetails project={project} />
+
+                                    {project.toggleProject.viewing_Iframe ||
+                                        project.toggleProject.viewing_WireFrame ?
+                                        <ProjectView
+                                            project={project}
+                                            projects={projects}
+                                            currentProjectIndex={currentProjectIndex}
+                                            dispatch={dispatch} /> : null}
+                                </figcaption>
+                            </figure>
+                        )
+                    })}
+                </section>
+            </main>
         </>
     )
 }

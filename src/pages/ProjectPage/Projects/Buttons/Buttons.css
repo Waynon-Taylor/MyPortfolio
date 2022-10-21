@@ -1,0 +1,39 @@
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.buttons button, .buttons button a {
+    color: rgb(12, 0, 18);
+}
+
+.project-fontsize {
+    font-size: min(3.7vw, 80px);
+}
+
+.project-view-fontsize {
+    font-size: min(2.7vw, 80px);
+}
+
+.buttons button {
+    flex-grow: 1;
+    background-color: #eaeaea;
+    padding: 0.568em;
+    border-style: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.buttons button a {
+    text-decoration: none;
+}
+
+@media all and (min-width:800px) {
+    .project-fontsize {
+        font-size: min(1.64vw, 80px);
+    }
+
+    .project-view-fontsize {
+        font-size: min(2.64vw, 80px);
+    }
+}

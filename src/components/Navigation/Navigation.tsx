@@ -1,6 +1,6 @@
 import './Navigation.css'
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
 
     return (
         <>
