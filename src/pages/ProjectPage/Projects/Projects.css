@@ -1,3 +1,17 @@
+.viewd {
+    border: solid purple 3px;
+    position: relative;
+    z-index: 0;
+}
+
+.viewd::before { 
+    content: 'viewd';
+    font-size: 20px;
+    color: purple;
+    position: absolute;
+    top:-30px;
+}
+
 #projects-container {
     display: grid;
     place-items: center;
@@ -10,13 +24,18 @@
     width: 100%;
 }
 
+#projects>figure a>img {
+    display: block;
+}
+
+.img-container {
+    margin-bottom: 20px;
+}
+
 #projects {
     display: flex;
     flex-direction: column;
-}
-
-#projects>figure {
-    padding-bottom: 8%;
+    gap: 80px;
 }
 
 @media all and (min-width:800px) {

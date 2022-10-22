@@ -1,4 +1,5 @@
 import Navigation from './components/Navigation/Navigation'
+import { Routes, Route } from 'react-router-dom'
 import About from './pages/AboutPage/About'
 import ProjectPage from './pages/ProjectPage/ProjectPage';
 import Footer from './components/Footer/Footer'
@@ -8,8 +9,10 @@ function App() {
   return (
     <main className="App">
       <Navigation />
-      {/* <About /> */}
-      < ProjectPage/>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/projects" element={<ProjectPage />} />
+      </Routes>
       <Footer />
     </main>
   );

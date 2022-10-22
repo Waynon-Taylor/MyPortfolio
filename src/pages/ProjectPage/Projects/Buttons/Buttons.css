@@ -1,3 +1,4 @@
+/* project-buttons */
 .buttons {
     display: flex;
     gap: 5px;
@@ -9,10 +10,6 @@
 
 .project-fontsize {
     font-size: min(3.7vw, 80px);
-}
-
-.project-view-fontsize {
-    font-size: min(2.7vw, 80px);
 }
 
 .buttons button {
@@ -28,12 +25,36 @@
     text-decoration: none;
 }
 
+/* .project-view-buttons */
+.project-view-button-enabled {
+    display: block;
+}
+
+.project-view-button-disabled {
+    display: none;
+}
+
+.project-view-fontsize {
+    font-size: min(3vw, 16px);
+}
+
+.prev-button, .next-button, .close-button {
+    font-size: min(4vw, 30px);
+    padding: 7px;
+    color: white;
+    border-style:none ;
+}
+
+.prev-button, .next-button {
+    background-color: rgb(46, 255, 46);
+}
+
+.close-button {
+    background-color: rgb(255, 28, 28);
+}
+
 @media all and (min-width:800px) {
     .project-fontsize {
         font-size: min(1.64vw, 80px);
-    }
-
-    .project-view-fontsize {
-        font-size: min(2.64vw, 80px);
     }
 }

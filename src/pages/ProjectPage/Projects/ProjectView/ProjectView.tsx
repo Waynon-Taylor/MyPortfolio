@@ -2,10 +2,8 @@ import './ProjectView.css'
 import infoIcon from '../../../../assets/icons/infoIcon.svg'
 import { useState } from 'react'
 import { Props } from '../../@types-projectTypes/projectTypes'
-import { toggleProjectViewd } from '../../utills/toggleProjectViewd'
 import ProjectDetails from '../ProjectDetails/ProjectDetails'
 import Buttons from "../Buttons/Buttons"
-import CarouselButtons from './CarouselButtons'
 
 
 const ProjectView: React.FC<Props> = ({ project, projects, dispatch, currentProjectIndex }) => {
@@ -24,7 +22,7 @@ const ProjectView: React.FC<Props> = ({ project, projects, dispatch, currentProj
                     scrolling="yes"
                     title={`Iframe of ${project.projectName} project `}
                     src={project.projectLinks.IFRAME}
-                    allowFullScreen = {true}>
+                    allowFullScreen={true}>
                 </iframe>
             </div> : null}
 
@@ -38,24 +36,26 @@ const ProjectView: React.FC<Props> = ({ project, projects, dispatch, currentProj
                 </div> : null
                 }
 
-                {viewDetails ? <div id='project-details'>
-                    <button onClick={toggleViewDetails}>X</button>
-                    <ProjectDetails project={project} /></div> : null}
-
+                {
+                    viewDetails ?
+                        <div id='project-details'>
+                            <ProjectDetails project={project} viewDetails={viewDetails} />
+                            <button id='close-project-Details' onClick={toggleViewDetails}>X</button>
+                        </div> : null
+                }
             </main>
 
-            <div id='project-view-buttons'>
-               <img onClick={toggleViewDetails} src={infoIcon} alt="info Icon" />
-                <Buttons project={project} projects={projects} dispatch={dispatch} />
-                <CarouselButtons
+            <div id='project-view-buttons-container'>
+                <img
+                    id='info-icon'
+                    onClick={toggleViewDetails}
+                    src={infoIcon}
+                    alt="info Icon" />
+                <Buttons
                     project={project}
                     projects={projects}
-                    currentProjectIndex={currentProjectIndex}
-                    dispatch={dispatch} />
-                <button onClick={() => dispatch({
-                    type: 'CLOSE_FRAME',
-                    payload: toggleProjectViewd(project, projects, false, false)
-                })}>X</button>
+                    dispatch={dispatch}
+                    currentProjectIndex={currentProjectIndex} />
             </div>
         </>
     )

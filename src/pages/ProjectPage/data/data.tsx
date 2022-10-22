@@ -17,7 +17,7 @@ const projectsList: Project[] = [
             REPO: '#'
         },
         projectName: 'Portfolio-1',
-        projectDescription: 'This is my portfolio website',
+        projectDescription: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo unde quibusdam recusandae earum dolores exercitationem delectus rem magnam, repellat illo ad. Aut consequuntur mollitia deserunt corrupti necessitatibus! Optio maiores quibusdam eos necessitatibus magni unde voluptates?',
         projectTools: '#typescript #react.js'
     },
     {
@@ -34,7 +34,7 @@ const projectsList: Project[] = [
             REPO: '#'
         },
         projectName: 'Portfolio-2',
-        projectDescription: 'This is my portfolio website',
+        projectDescription: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo unde quibusdam recusandae earum dolores exercitationem delectus rem magnam, repellat illo ad. Aut consequuntur mollitia deserunt corrupti necessitatibus! Optio maiores quibusdam eos necessitatibus magni unde voluptates?',
         projectTools: '#typescript #react.js'
     }
 ]

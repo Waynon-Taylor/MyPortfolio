@@ -1,6 +1,6 @@
 import './Projects.css'
 import { Action, Project } from '../@types-projectTypes/projectTypes'
-import { toggleProjectViewd } from '../utills/toggleProjectViewd'
+import { toggleProjectViewd } from '../utills/utills'
 import ProjectDetails from './ProjectDetails/ProjectDetails'
 import ProjectView from './ProjectView/ProjectView'
 import Buttons from './Buttons/Buttons'
@@ -21,7 +21,7 @@ const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
                      return (
                             < figure key={project.projectName}>
 
-                                <a style={{ display: 'block' }} className={`${project.viewdStatus ? 'viewd' : ''} project-img`}
+                                <a style={{ display: 'block' }} className={`${project.viewdStatus ? 'viewd' : ''} img-container`}
                                     onClick={() => dispatch({
                                         type: 'LOAD_IFRAME',
                                         payload: toggleProjectViewd(project, projects, true, false)
@@ -33,7 +33,8 @@ const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
                                     <Buttons
                                         project={project}
                                         projects={projects}
-                                        dispatch={dispatch} />
+                                        dispatch={dispatch} 
+                                        currentProjectIndex={currentProjectIndex}/>
                                     <ProjectDetails project={project} />
 
                                     {project.toggleProject.viewing_Iframe ||

@@ -1,5 +1,5 @@
 import './Navigation.css'
-
+import { Link } from 'react-router-dom'
 const Navigation: React.FC = () => {
 
     return (
@@ -7,8 +7,8 @@ const Navigation: React.FC = () => {
             <div id='navigation-container'>
                 <nav id="navigation">
                     <ul className="navigation-list">
-                        <li><a href="#">about</a> </li>
-                        <li><a href="#">projects</a> </li>
+                        <li><Link to="/">about</Link> </li>
+                        <li><Link to="/projects">projects</Link> </li>
                         <li className='contacts'><a href="#">contacts</a></li>
                         <li><a href="#">resume</a></li>
                     </ul>

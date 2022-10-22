@@ -1,35 +1,58 @@
-#project-view-buttons, #project-view {
-    position: fixed;
-}
-
 #project-view {
-    background-color: white;
-    height: 100vh;
+    position: fixed;
     inset: 0;
+    z-index: 10;
+    height: 100vh;
+    background-color: white;
 }
 
 #project-view iframe {
     overflow: scroll;
     width: 100%;
-    height: 93vh;
-}
-
-#project-view-buttons {
-    background-color: rgb(36, 36, 36);
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    inset: auto 0 0 0;
-}
-
-#project-view-buttons button {
-    color: black;
+    height: 92vh;
 }
 
 #project-details {
-    background-color: black;
-    width: 40%;
-    position:absolute;
-    inset: 300px 150px;
-    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 11;
+    width: clamp(250px, 40%, 500px);
+    padding: 10px;
+    height: fit-content;
+    background-color: rgb(36, 36, 36);
+}
+
+#close-project-Details {
+    position: absolute;
+    inset: 5px 5px auto auto;
+    z-index: 12;
+    padding: 0 5px;
+    font-size: 20px;
+    border-style: none;
+    background-color: rgb(255, 28, 28);
+    color: white;
+}
+
+/* project-view-buttons-container */
+#project-view-buttons-container {
+    position: fixed;
+    background-color: rgb(36, 36, 36);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    inset: auto 0 0 0;
+    gap: 10px;
+    z-index: 11;
+}
+
+#info-icon,#project-details {
+    display: none;
+}
+
+@media all and (min-width:500px) {
+    #info-icon,#project-details {
+        display: block;
+    }
 }

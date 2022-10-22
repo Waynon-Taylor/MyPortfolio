@@ -1,2 +1,14 @@
-/* .project-details {
-} */
+.project-details-color>* {
+    color: white;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-details-viewd-color>* {
+    color: purple;
+}
