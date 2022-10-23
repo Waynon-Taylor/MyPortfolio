@@ -1,6 +1,6 @@
 import './ProjectView.css'
 import infoIcon from '../../../../assets/icons/infoIcon.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Props } from '../../@types-projectTypes/projectTypes'
 import ProjectDetails from '../ProjectDetails/ProjectDetails'
 import Buttons from "../Buttons/Buttons"
@@ -10,6 +10,15 @@ const ProjectView: React.FC<Props> = ({ project, projects, dispatch, currentProj
 
     const [viewDetails, setViewDetails] = useState(false)
 
+    useEffect(() => {
+        document.body.classList.add('disable-scrollbar')
+        console.log('added class')
+        return () => {
+            document.body.classList.remove('disable-scrollbar')
+            console.log('cleanUp')
+        }
+    }, [])
+    console.log("render-Project-View")
     const toggleViewDetails = () => {
         if (viewDetails) setViewDetails(false)
         if (!viewDetails) setViewDetails(true)
@@ -19,15 +28,16 @@ const ProjectView: React.FC<Props> = ({ project, projects, dispatch, currentProj
         <>
             <main id='project-view'> {project.toggleProject.viewing_Iframe ? <div>
                 <iframe
+                    className='resize-project-view'
                     scrolling="yes"
                     title={`Iframe of ${project.projectName} project `}
-                    src={project.projectLinks.IFRAME}
-                    allowFullScreen={true}>
+                    src={project.projectLinks.IFRAME}>
                 </iframe>
             </div> : null}
 
                 {project.toggleProject.viewing_WireFrame ? <div>
                     <iframe
+                        className='resize-project-view'
                         scrolling="yes"
                         title={`Wireframe of ${project.projectName} project `}
                         src={project.projectLinks.WIREFRAME}
@@ -40,7 +50,7 @@ const ProjectView: React.FC<Props> = ({ project, projects, dispatch, currentProj
                     viewDetails ?
                         <div id='project-details'>
                             <ProjectDetails project={project} viewDetails={viewDetails} />
-                            <button id='close-project-Details' onClick={toggleViewDetails}>X</button>
+                            <button id='close-project-Details-button' onClick={toggleViewDetails}>X</button>
                         </div> : null
                 }
             </main>

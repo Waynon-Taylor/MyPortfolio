@@ -38,5 +38,4 @@ const projectsList: Project[] = [
         projectTools: '#typescript #react.js'
     }
 ]
-
 export default projectsList

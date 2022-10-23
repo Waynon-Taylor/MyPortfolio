@@ -1,16 +1,3 @@
-.viewd {
-    border: solid purple 3px;
-    position: relative;
-    z-index: 0;
-}
-
-.viewd::before { 
-    content: 'viewd';
-    font-size: 20px;
-    color: purple;
-    position: absolute;
-    top:-30px;
-}
 
 #projects-container {
     display: grid;
@@ -18,38 +5,66 @@
     padding: 0 6%;
 }
 
-#projects,
-#projects>figure,
-#projects>figure a>img {
-    width: 100%;
-}
-
-#projects>figure a>img {
-    display: block;
-}
-
-.img-container {
+.project-img-container {
     margin-bottom: 20px;
 }
 
-#projects {
+
+.project-img-container {
+    margin-bottom: 20px;
+}
+
+
+.viewd {
+    border: solid purple 3px;
+    position: relative;
+    z-index: 0;
+}
+
+.viewd::before {
+    content: 'viewd';
+    font-size: min(4vw, 20px);
+    color: purple;
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+.not-viewd{
+    border: none;
+}
+
+#project,
+#project figure,
+.project-img-container, .project-img {
+    width: 100%;
+}
+
+
+
+.project-img {
+    display: block;
+    cursor: pointer;
+}
+
+#project {
     display: flex;
     flex-direction: column;
     gap: 80px;
 }
 
 @media all and (min-width:800px) {
-    #projects-container {
+    #project-container {
         padding: 0 10%;
     }
 
-    #projects {
+    #project {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 6%;
     }
 
-    #projects>figure {
+    #project figure {
         width: 47%;
     }
 }

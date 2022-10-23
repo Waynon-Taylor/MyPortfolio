@@ -1,15 +1,19 @@
+body.disable-scrollbar::-webkit-scrollbar  {
+    display: none;
+}
+
 #project-view {
     position: fixed;
     inset: 0;
     z-index: 10;
-    height: 100vh;
+    height: 91.5vh;
     background-color: white;
+    overflow: scroll;
 }
 
 #project-view iframe {
-    overflow: scroll;
     width: 100%;
-    height: 92vh;
+    height: 91.5vh;
 }
 
 #project-details {
@@ -24,7 +28,7 @@
     background-color: rgb(36, 36, 36);
 }
 
-#close-project-Details {
+#close-project-Details-button {
     position: absolute;
     inset: 5px 5px auto auto;
     z-index: 12;
@@ -33,6 +37,7 @@
     border-style: none;
     background-color: rgb(255, 28, 28);
     color: white;
+    cursor: pointer;
 }
 
 /* project-view-buttons-container */
@@ -45,10 +50,15 @@
     inset: auto 0 0 0;
     gap: 10px;
     z-index: 11;
+    height: 8.5vh;
 }
 
 #info-icon,#project-details {
     display: none;
+}
+
+#info-icon{
+    cursor: pointer;
 }
 
 @media all and (min-width:500px) {

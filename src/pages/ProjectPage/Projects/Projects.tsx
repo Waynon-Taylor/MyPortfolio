@@ -11,30 +11,35 @@ interface Props {
 }
 
 const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
-
+    console.log("render-Projectx")
     return (
         <>
             <main id='projects-container'>
-                <section id='projects'>
+                <section id='project'>
 
                     {projects.map((project, currentProjectIndex) => {
-                     return (
+                        return (
                             < figure key={project.projectName}>
 
-                                <a style={{ display: 'block' }} className={`${project.viewdStatus ? 'viewd' : ''} img-container`}
+                                <button
+                                    className={`${project.viewdStatus ? 'viewd' : 'not-viewd'} project-img-container`}
                                     onClick={() => dispatch({
                                         type: 'LOAD_IFRAME',
                                         payload: toggleProjectViewd(project, projects, true, false)
                                     })}>
-                                    <img src={project.projectImage} alt="Project Image" />
-                                </a>
+
+                                    <img
+                                        className={' project-img'}
+                                        src={project.projectImage}
+                                        alt={`project: ${project.projectName} thumbnail.`} />
+                                </button>
 
                                 <figcaption>
                                     <Buttons
                                         project={project}
                                         projects={projects}
-                                        dispatch={dispatch} 
-                                        currentProjectIndex={currentProjectIndex}/>
+                                        dispatch={dispatch}
+                                        currentProjectIndex={currentProjectIndex} />
                                     <ProjectDetails project={project} />
 
                                     {project.toggleProject.viewing_Iframe ||

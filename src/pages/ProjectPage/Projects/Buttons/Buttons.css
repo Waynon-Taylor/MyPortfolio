@@ -43,6 +43,7 @@
     padding: 7px;
     color: white;
     border-style:none ;
+    cursor: pointer;
 }
 
 .prev-button, .next-button {
