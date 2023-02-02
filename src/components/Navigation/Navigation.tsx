@@ -7,10 +7,9 @@ const Navigation: React.FC = () => {
             <div id='navigation-container'>
                 <nav id="navigation">
                     <ul className="navigation-list">
-                        <li><Link to="/">about</Link> </li>
-                        <li><Link to="/projects">projects</Link> </li>
-                        <li className='contacts'><Link to="/">contacts</Link> </li>
-                        <li><a href="#">resume</a></li>
+                        <li><Link to="/">About</Link> </li>
+                        <li><Link to="/projects">Projects</Link> </li>
+                        <li><a href="#">Resume</a></li>
                     </ul>
                 </nav>
             </div>

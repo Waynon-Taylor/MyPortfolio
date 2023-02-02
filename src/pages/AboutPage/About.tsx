@@ -6,7 +6,7 @@ const About: React.FC = () => {
             <div id='about-page'>
                 <section id='about-details'>
                     <div id='about'>
-                        <span id='W'>W</span><h2>ho Am I ?</h2>
+                        <h2>Who Am I ?</h2>
                         <div id='about-description'>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetdol. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores dignissimos.

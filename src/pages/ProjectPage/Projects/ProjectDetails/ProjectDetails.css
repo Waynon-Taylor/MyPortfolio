@@ -1,4 +1,4 @@
-.project-details-color>* {
+.project-details {
     color: white;
 }
 
@@ -9,6 +9,6 @@
     margin-top: 10px;
 }
 
-.project-details-viewd-color>* {
-    color: purple;
+.project-details-viewd>* {
+    color: var(--viewd-clr);
 }

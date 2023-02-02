@@ -10,10 +10,6 @@
     justify-content: center;
 }
 
-.contacts {
-    display: none;
-}
-
 .navigation-list li a {
     color: rgb(255, 255, 255);
 }
@@ -28,22 +24,9 @@
     gap: 18%;
 }
 
-/* DESKTOP*/
-@media all and (min-width:1242px) {
-
-    /* small tweak */
-    #navigation {
-        margin-bottom: clamp(100px, 17.5vw, 200px);
-    }
-}
-
 /* DESKTOP AND TABLET */
 @media all and (min-width:695px) {
     .navigation-list {
         font-size: clamp(1em, 3.8vw, 35.93px);
-    }
-
-    .contacts {
-        display: block;
     }
 }

@@ -1,25 +1,24 @@
 import './Projects.css'
-import { Action, Project } from '../@types-projectTypes/projectTypes'
+import { Action, Project } from '../types-projectTypes/projectTypes'
 import { toggleProjectViewd } from '../utills/utills'
 import ProjectDetails from './ProjectDetails/ProjectDetails'
 import ProjectView from './ProjectView/ProjectView'
 import Buttons from './Buttons/Buttons'
+import { v4 } from 'uuid'
 
 interface Props {
     projects: Project[]
     dispatch: React.Dispatch<Action>
 }
 
-const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
-    console.log("render-Projectx")
+const Projects: React.FC<Props> = ({ projects, dispatch }) => {
     return (
         <>
             <main id='projects-container'>
                 <section id='project'>
-
                     {projects.map((project, currentProjectIndex) => {
                         return (
-                            < figure key={project.projectName}>
+                            < figure key={v4()}>
 
                                 <button
                                     className={`${project.viewdStatus ? 'viewd' : 'not-viewd'} project-img-container`}
@@ -42,8 +41,8 @@ const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
                                         currentProjectIndex={currentProjectIndex} />
                                     <ProjectDetails project={project} />
 
-                                    {project.toggleProject.viewing_Iframe ||
-                                        project.toggleProject.viewing_WireFrame ?
+                                    {project.viewing_Iframe ||
+                                        project.viewing_WireFrame ?
                                         <ProjectView
                                             project={project}
                                             projects={projects}
@@ -58,4 +57,4 @@ const ProjectItem: React.FC<Props> = ({ projects, dispatch }) => {
         </>
     )
 }
-export default ProjectItem
+export default Projects

@@ -1,70 +1,68 @@
-
-#projects-container {
-    display: grid;
-    place-items: center;
-    padding: 0 6%;
+#projectPage {
+    display: flex;
+    justify-content: center;
 }
-
-.project-img-container {
-    margin-bottom: 20px;
-}
-
-
-.project-img-container {
-    margin-bottom: 20px;
-}
-
 
 .viewd {
-    border: solid purple 3px;
+    outline-offset: -2px;
+    outline: solid var(--viewd-clr) 3px;
     position: relative;
     z-index: 0;
 }
 
 .viewd::before {
+    color: var(--viewd-clr);
     content: 'viewd';
     font-size: min(4vw, 20px);
-    color: purple;
+    left: 0;
     position: absolute;
     top: -30px;
-    left: 0;
 }
 
-.not-viewd{
+.not-viewd {
     border: none;
 }
 
-#project,
-#project figure,
-.project-img-container, .project-img {
+.project-img-container {
+    margin-bottom: min(3vw, 20px);
     width: 100%;
 }
 
-
+#project figure {
+    max-width: 600px;
+    padding-bottom: 80px;
+    width: 90%;
+}
 
 .project-img {
-    display: block;
     cursor: pointer;
+    display: block;
+    width: 100%;
 }
 
 #project {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    justify-content: space-between;
+    max-width: 1200px;
 }
 
 @media all and (min-width:800px) {
-    #project-container {
-        padding: 0 10%;
-    }
 
     #project {
+        align-items: stretch;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 6%;
+        padding: 0 8vw;
     }
 
     #project figure {
-        width: 47%;
+        max-width: 450px;
+        width: 45%;
+    }
+
+    .project-img-container {
+        margin-bottom: min(1.5vw, 20px);
     }
 }

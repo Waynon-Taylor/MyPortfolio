@@ -1,17 +1,13 @@
 export type ProjectLinks = {
-    IFRAME: string,
-    WIREFRAME: string,
-    URL: string,
-    REPO: string
-}
-
-export type ToggleProject = {
-    viewing_Iframe: boolean,
-    viewing_WireFrame: boolean
+    iframeLINK: string,
+    wireFrameLINK: string,
+    urlLINK: string,
+    repoLINK: string
 }
 
 export interface Project {
-    toggleProject: ToggleProject
+    viewing_Iframe: boolean,
+    viewing_WireFrame: boolean
     viewdStatus: boolean
     projectImage: string
     projectLinks: ProjectLinks
