@@ -39,6 +39,9 @@
     display: block;
     width: 100%;
 }
+.disable-project-img{
+    pointer-events: none;
+}
 
 #project {
     align-items: center;

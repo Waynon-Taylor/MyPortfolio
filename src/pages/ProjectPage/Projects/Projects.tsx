@@ -1,6 +1,5 @@
 import './Projects.css'
 import { Action, Project } from '../types-projectTypes/projectTypes'
-import { toggleProjectViewd } from '../utills/utills'
 import ProjectDetails from './ProjectDetails/ProjectDetails'
 import ProjectView from './ProjectView/ProjectView'
 import Buttons from './Buttons/Buttons'
@@ -17,20 +16,29 @@ const Projects: React.FC<Props> = ({ projects, dispatch }) => {
             <main id='projects-container'>
                 <section id='project'>
                     {projects.map((project, currentProjectIndex) => {
+
+                        const { livelLINK } = project.projectLinks
+                        const {
+                            viewdStatus,
+                            projectImage,
+                            projectName,
+                            viewing_Iframe,
+                            viewing_WireFrame
+                        } = project
+
                         return (
                             < figure key={v4()}>
-
-                                <button
-                                    className={`${project.viewdStatus ? 'viewd' : 'not-viewd'} project-img-container`}
-                                    onClick={() => dispatch({
-                                        type: 'LOAD_IFRAME',
-                                        payload: toggleProjectViewd(project, projects, true, false)
-                                    })}>
-
-                                    <img
-                                        className={' project-img'}
-                                        src={project.projectImage}
-                                        alt={`project: ${project.projectName} thumbnail.`} />
+                                <button className={`${viewdStatus ? 'viewd' : 'not-viewd'} project-img-container`} >
+                                    <a
+                                        className={`${!livelLINK ? 'disable-project-img' : ''}`}
+                                        href={livelLINK}
+                                        target='_blank'>
+                                        <img
+                                            className={' project-img'}
+                                            src={projectImage}
+                                            alt={`project: ${projectName} thumbnail.`}
+                                        />
+                                    </a>
                                 </button>
 
                                 <figcaption>
@@ -38,16 +46,20 @@ const Projects: React.FC<Props> = ({ projects, dispatch }) => {
                                         project={project}
                                         projects={projects}
                                         dispatch={dispatch}
-                                        currentProjectIndex={currentProjectIndex} />
-                                    <ProjectDetails project={project} />
+                                        currentProjectIndex={currentProjectIndex}
+                                    />
 
-                                    {project.viewing_Iframe ||
-                                        project.viewing_WireFrame ?
+                                    <ProjectDetails
+                                        project={project}
+                                    />
+
+                                    {viewing_Iframe || viewing_WireFrame ?
                                         <ProjectView
                                             project={project}
                                             projects={projects}
                                             currentProjectIndex={currentProjectIndex}
-                                            dispatch={dispatch} /> : null}
+                                            dispatch={dispatch}
+                                        /> : null}
                                 </figcaption>
                             </figure>
                         )

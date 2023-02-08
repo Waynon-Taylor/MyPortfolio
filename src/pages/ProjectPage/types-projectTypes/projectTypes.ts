@@ -1,8 +1,8 @@
 export type ProjectLinks = {
     iframeLINK: string,
     wireFrameLINK: string,
-    urlLINK: string,
-    repoLINK: string
+    livelLINK: string,
+    codeLINK: string
 }
 
 export interface Project {

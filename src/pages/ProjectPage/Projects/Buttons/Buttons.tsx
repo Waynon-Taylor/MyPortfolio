@@ -14,7 +14,7 @@ const Buttons: React.FC<Props> = ({ project, projects, dispatch, currentProjectI
     const buttonVisibility = projectCurrentviewingStatus ?
         `${projectViewButton}-enabled` : `${projectViewButton}-disabled`;
 
-    const { iframeLINK, wireFrameLINK, urlLINK, repoLINK } = project.projectLinks
+    const { iframeLINK, wireFrameLINK, livelLINK, codeLINK } = project.projectLinks
     function buttonDisableStyle(value: string | number) {
         return value ? '' : 'disable-button'
     }
@@ -22,6 +22,15 @@ const Buttons: React.FC<Props> = ({ project, projects, dispatch, currentProjectI
     return (
         <>
             <div className={`buttons`}>
+                <button
+                    className={buttonDisableStyle(livelLINK)}>
+                    <a
+                        href={livelLINK}
+                        className={`button ${toggleFontSize}`}
+                        target='_blanck'>
+                        LIVE
+                    </a>
+                </button>
 
                 <button
                     disabled={!iframeLINK}
@@ -45,24 +54,16 @@ const Buttons: React.FC<Props> = ({ project, projects, dispatch, currentProjectI
                     WIREFRAME
                 </button>
 
-                <button className={`button ${buttonDisableStyle(urlLINK)}`}>
+                <button
+                    className={`${buttonDisableStyle(codeLINK)}`}>
                     <a
-                        aria-disabled={!urlLINK}
-                        role={urlLINK}
-                        className={toggleFontSize} target='_blanck'>
-                        URL
+                        href={codeLINK}
+                        className={`button ${toggleFontSize}`}
+                        target='_blanck'>
+                        CODE
                     </a>
                 </button>
-
-                <button className={`button ${buttonDisableStyle(repoLINK)}`}>
-                    <a
-                        aria-disabled={!repoLINK}
-                        role={repoLINK}
-                        className={toggleFontSize} target='_blanck'>
-                        REPO
-                    </a>
-                </button>
-            </div>
+            </div >
 
             <button
                 disabled={!currentProjectIndex}

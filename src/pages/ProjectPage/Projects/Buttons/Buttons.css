@@ -2,24 +2,27 @@
     font-size: min(3vw, 80px);
 }
 
+button {
+    all: unset;
+}
+
 .buttons {
     display: flex;
     gap: 5px;
 }
 
-.buttons .button a {
-    text-decoration: none;
-}
-
 .button {
+    font-family: Arial;
+    display: block;
     border-radius: 20px;
     border-style: none;
     flex-grow: 1;
     padding: 0.568em;
+    text-align: center;
 }
 
 .button a {
-    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 .prev-button, .next-button, .close-button, .button {
@@ -30,6 +33,7 @@
 
 .disable-button {
     opacity: 0.6;
+    pointer-events: none;
 }
 
 .project-view-fontsize {
