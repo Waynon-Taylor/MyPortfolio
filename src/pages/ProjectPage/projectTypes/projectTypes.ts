@@ -20,10 +20,3 @@ export type Action = {
     type: string,
     payload: Project[]
 }
-
-export interface Props {
-    project: Project
-    projects: Project[]
-    currentProjectIndex: number
-    dispatch: React.Dispatch<Action>
-}

@@ -1,23 +1,25 @@
-.project-fontsize {
-    font-size: min(3vw, 80px);
-}
-
 button {
     all: unset;
 }
 
 .buttons {
+    align-items: center;
     display: flex;
-    gap: 5px;
+    font-size: min(3.7vw, 14px);
+    gap: 0.5em;
+    justify-content: space-between;
+    padding: 1.5em 0;
 }
 
 .button {
-    font-family: Arial;
-    display: block;
+    background-color: #151318;
     border-radius: 20px;
     border-style: none;
-    flex-grow: 1;
-    padding: 0.568em;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    height: fit-content;
+    padding: 0.868em 1em;
     text-align: center;
 }
 
@@ -25,37 +27,25 @@ button {
     text-decoration: none;
 }
 
-.prev-button, .next-button, .close-button, .button {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
+.button:hover {
+    background-color: #2626269f;
 }
 
 .disable-button {
-    opacity: 0.6;
-    pointer-events: none;
+    opacity: 0.5;
+    pointer-events: none
 }
 
-.project-view-fontsize {
-    font-size: min(3vw, 16px);
+/* tablet */
+@media all and (min-width:500px) {
+    .buttons {
+        font-size: min(1.72vw, 14px);
+    }
 }
 
-.project-view-button-enabled {
-    display: block;
-}
-
-.project-view-button-disabled {
-    display: none;
-}
-
-.prev-button, .next-button, .close-button {
-    border-style: none;
-    font-size: min(4vw, 30px);
-    padding: 7px;
-}
-
-@media all and (min-width:800px) {
-    .project-fontsize {
-        font-size: clamp(15px, 1.64vw, 20px);
+/* desktop */
+@media all and (min-width:950px) {
+    .buttons {
+        font-size: min(1.21vw, 14px);
     }
 }

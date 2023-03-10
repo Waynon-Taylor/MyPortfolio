@@ -1,0 +1,137 @@
+/* MOBLE SCREEN */
+#about-page {
+    display: grid;
+    font-size: min(6vw, 40px);
+    grid-auto-rows: auto;
+    padding: 0 6vw;
+    font-weight: 700;
+}
+
+#about h2 {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+}
+
+#about h2 {
+    line-height: 50px;
+    vertical-align: bottom;
+}
+
+#about-description {
+    width: clamp(230px, 80vw, 745px);
+    font-style: italic;
+    margin: 2em 0;
+}
+
+#contact-button {
+    background-color: rgb(46, 212, 9);
+    border-radius: 15px;
+    color: rgb(242, 242, 242);
+    cursor: pointer;
+    display: block;
+    font-size: 0.5em;
+    padding: 0.55em;
+    width: fit-content;
+}
+
+#contact-button:hover {
+    background-color: rgb(55, 218, 18);
+    transform: scale(1.01);
+}
+
+#skill-section h2, #contacts h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-bottom: .7em;
+    width: fit-content;
+}
+
+#about, #skill-section, #contacts {
+    padding: 1.3em 0;
+}
+
+.skill-category-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-category-name {
+    padding-bottom: 4px;
+}
+
+#about #about-description, .skill-category-container, #contacts ul {
+    font-size: 0.798em;
+}
+
+.skill-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-style: italic;
+}
+
+.skill-category-list li, #contacts ul li a {
+    font-size: 0.7em;
+}
+
+#skills-container {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-column-gap: min(3.5VW, 80px);
+    grid-row-gap: 1.48rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    max-width: max-content;
+}
+
+#skills-container :last-child {
+    justify-self: start;
+}
+
+.skill-category-list {
+    list-style-position: inside;
+}
+
+#contacts ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 1em;
+    list-style: none;
+}
+
+#contacts ul li {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+#contacts ul li a {
+    font-style: italic;
+}
+
+/* DESKTOP AND TABLET SCREEN */
+@media all and (min-width:1080px) {
+
+    #about-page {
+        padding: 0 17vw;
+    }
+}
+
+@media all and (min-width:830px) {
+    #contacts ul {
+        grid-template-columns: 150px 150px;
+        grid-column-gap: 8em;
+        grid-row-gap: 1em;
+    }
+}
+
+@media all and (min-width:950px) {
+
+    #skills-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #skills-container :last-child {
+        justify-self: center
+    }
+}

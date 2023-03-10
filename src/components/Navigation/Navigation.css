@@ -1,32 +1,27 @@
 /* MOBLE*/
 #navigation {
-    font-family: 'Times New Roman';
-    font-size: min(7.2vw, 25.6348px);
-    border-bottom: solid 2.5px rgb(0, 0, 0);
-
-    padding: min(10vw, 2em) 0;
-    margin-bottom: min(15vw, 110px);
+    /* border-bottom: solid 2.5px rgb(0, 0, 0); */
     display: flex;
+    font-size: min(7.2vw, 20px);
     justify-content: center;
+    margin-bottom: clamp(50px,15vw, 110px);
+    padding: min(10vw, 2em);
 }
 
 .navigation-list li a {
     color: rgb(255, 255, 255);
 }
 
-.navigation-list {
-    list-style: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1em;
-    display: flex;
-    justify-content: center;
-    gap: 18%;
+.navigation-list li a:hover {
+    opacity: 0.8;
 }
 
-/* DESKTOP AND TABLET */
-@media all and (min-width:695px) {
-    .navigation-list {
-        font-size: clamp(1em, 3.8vw, 35.93px);
-    }
+.navigation-list {
+    display: flex;
+    font-size: min( 5vw, 35.93px);
+    font-style: normal;
+    font-weight: 700;
+    gap: 18%;
+    justify-content: center;
+    list-style: none;
 }

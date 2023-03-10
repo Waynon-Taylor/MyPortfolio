@@ -4,9 +4,9 @@ const Footer: React.FC = () => {
     return (
         <>
             <footer id="footer">
-                <hr />
+                {/* <hr /> */}
                 <div id="footer-info">
-                    <a target='_blank' href="https://github.com/The-taylord">© 2022 Designed & Developed by Wayon Taylor.</a>
+                    <a target='_blank' href="https://github.com/The-taylord">© 2022 Wayon Taylor</a>
                 </div>
             </footer>
         </>

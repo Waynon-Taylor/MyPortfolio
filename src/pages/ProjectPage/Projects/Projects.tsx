@@ -1,7 +1,7 @@
 import './Projects.css'
-import { Action, Project } from '../types-projectTypes/projectTypes'
-import ProjectDetails from './ProjectDetails/ProjectDetails'
-import ProjectView from './ProjectView/ProjectView'
+import { updateCurrentProjectViewStatus } from '../utills/utills'
+import { Project, Action } from '../projectTypes/projectTypes'
+import ProjectDetails from './ProjectDetails'
 import Buttons from './Buttons/Buttons'
 import { v4 } from 'uuid'
 
@@ -11,24 +11,30 @@ interface Props {
 }
 
 const Projects: React.FC<Props> = ({ projects, dispatch }) => {
+
     return (
         <>
             <main id='projects-container'>
                 <section id='project'>
-                    {projects.map((project, currentProjectIndex) => {
+                    {projects.map((project) => {
 
                         const { livelLINK } = project.projectLinks
                         const {
                             viewdStatus,
                             projectImage,
                             projectName,
-                            viewing_Iframe,
-                            viewing_WireFrame
                         } = project
 
                         return (
                             < figure key={v4()}>
-                                <button className={`${viewdStatus ? 'viewd' : 'not-viewd'} project-img-container`} >
+                                <button disabled={!livelLINK}
+                                    className={`${viewdStatus ? 'viewd-marker-enable' : ''} project-img-container`}
+                                    onClick={
+                                        () => dispatch({
+                                            type: 'UPDATE_PROJECT_VIEW_STATUS',
+                                            payload: updateCurrentProjectViewStatus(project, projects)
+                                        })
+                                    }>
                                     <a
                                         className={`${!livelLINK ? 'disable-project-img' : ''}`}
                                         href={livelLINK}
@@ -46,20 +52,10 @@ const Projects: React.FC<Props> = ({ projects, dispatch }) => {
                                         project={project}
                                         projects={projects}
                                         dispatch={dispatch}
-                                        currentProjectIndex={currentProjectIndex}
                                     />
-
                                     <ProjectDetails
                                         project={project}
                                     />
-
-                                    {viewing_Iframe || viewing_WireFrame ?
-                                        <ProjectView
-                                            project={project}
-                                            projects={projects}
-                                            currentProjectIndex={currentProjectIndex}
-                                            dispatch={dispatch}
-                                        /> : null}
                                 </figcaption>
                             </figure>
                         )

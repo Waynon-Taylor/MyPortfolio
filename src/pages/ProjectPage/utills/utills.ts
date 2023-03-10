@@ -1,15 +1,36 @@
-import { Project } from "../types-projectTypes/projectTypes"
+import { Project } from "../projectTypes/projectTypes"
 
-export const toggleProjectViewd = (
+export const updateCurrentProjectViewStatus = (currentProject: Project, projects: Project[]) => {
+
+    if (!currentProject.viewdStatus) {
+        const projectsCopy: Project[] = JSON.parse(JSON.stringify(projects))
+
+        return projectsCopy.map(project => {
+            if (project.projectName === currentProject.projectName) {
+                project.viewdStatus = true
+            }
+            return project
+        })
+    }
+    return projects
+}
+
+export const toggleProjectViewOptions = (
     currentProject: Project,
     projects: Project[],
-    toggleIframe: boolean,
+    toggleIFrame: boolean,
     toggleWireFrame: boolean) => {
 
     const projectsCopy: Project[] = JSON.parse(JSON.stringify(projects))
     return projectsCopy.map((project: Project) => {
-        if (project.projectName === currentProject.projectName) {
-            project = { ...project, viewing_Iframe: toggleIframe, viewing_WireFrame: toggleWireFrame }
+
+        const { viewing_Iframe, viewing_WireFrame } = project
+        if (viewing_Iframe) project.viewing_Iframe = false;
+        if (viewing_WireFrame) project.viewing_WireFrame = false;
+
+        if (currentProject.projectName === project.projectName) {
+            project.viewing_Iframe = toggleIFrame;
+            project.viewing_WireFrame = toggleWireFrame;
             project.viewdStatus = true
             return project
         }
@@ -17,12 +38,10 @@ export const toggleProjectViewd = (
     })
 }
 
-export const toggleCarouselMode = (
-    projects: Project[],
-    currentProject: Project,
-    nextProjectIndex: number) => {
 
+export const projectsCarouselMode = (projects: Project[], currentProject: Project, nextProjectIndex: number) => {
     const projectsCopy: Project[] = JSON.parse(JSON.stringify(projects))
+
     return projectsCopy.map((project, ProjectIndex) => {
 
         if (currentProject.projectName === project.projectName) {

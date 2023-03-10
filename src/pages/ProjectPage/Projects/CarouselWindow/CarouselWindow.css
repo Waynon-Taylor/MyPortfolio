@@ -1,0 +1,108 @@
+:root {
+    --bbt-container-height: 70px;
+    --carousel-window-height: calc(100vh - (var(--bbt-container-height)))
+}
+
+body.disable-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-window-err-msg {
+    color: black;
+    display: block;
+    font-size: 1.5rem;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    width: 100%;
+}
+
+#carousel-window {
+    background: rgb(255, 255, 255);
+    inset: 0;
+    position: fixed;
+    z-index: 10;
+}
+
+#carousel-window iframe {
+    display: block;
+    height: var(--carousel-window-height);
+    width: 99.968745%;
+}
+
+.carousel-mode-button-style {
+    font-size: min(2.1vw, 14px);
+    padding: 0;
+}
+
+#carousel-window-buttons-container {
+    align-items: center;
+    background: var(--bg-clr);
+    display: flex;
+    gap: 0.6rem;
+    height: 70px;
+    inset: auto 0 0 0;
+    justify-content: center;
+    position: fixed;
+    z-index: 11;
+}
+
+#info-icon {
+    cursor: pointer;
+    width: min(5vw, 40px);
+}
+
+#info-icon:hover {
+    transform: scale(1.1);
+}
+
+.carousel-buttons, .close-button {
+    border-style: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: min(5.5vw, 30px);
+    height: fit-content;
+    padding: 7px;
+}
+
+.carousel-buttons:hover, .close-button:hover{
+    transform: scale(1.1);
+    background-color: #151318;
+}
+
+.carousel-buttons-disable {
+    opacity: 0.3;
+    pointer-events: none
+}
+
+#project-details-pop-up {
+    background: var(--bg-clr);
+    box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.558);
+    height: fit-content;
+    left: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    width: clamp(250px, 30%, 400px);
+    z-index: 11;
+}
+
+#close-project-details-pop-up-button {
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    inset: 5px 5px auto auto;
+    padding: 5px;
+    position: absolute;
+    z-index: 12;
+}
+
+#close-project-details-pop-up-button:hover {
+    transform: scale(1.1);
+    background: #151318;
+}

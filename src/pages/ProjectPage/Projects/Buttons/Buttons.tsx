@@ -1,102 +1,81 @@
 import './Buttons.css'
-import { Props } from '../../types-projectTypes/projectTypes'
-import { toggleProjectViewd, toggleCarouselMode } from '../../utills/utills'
+import { Link } from 'react-router-dom'
+import { Project, Action } from '../../projectTypes/projectTypes'
+import { toggleProjectViewOptions, updateCurrentProjectViewStatus } from '../../utills/utills'
 
-const Buttons: React.FC<Props> = ({ project, projects, dispatch, currentProjectIndex }) => {
+interface Props {
+    project: Project
+    projects: Project[]
+    dispatch: React.Dispatch<Action>
+    carouselModeButtonStyle?: string
+}
 
-    const projectCurrentviewingStatus =
-        project.viewing_WireFrame || project.viewing_Iframe;
-
-    const toggleFontSize = projectCurrentviewingStatus ?
-        'project-view-fontsize' : 'project-fontsize';
-
-    const projectViewButton = 'project-view-button'
-    const buttonVisibility = projectCurrentviewingStatus ?
-        `${projectViewButton}-enabled` : `${projectViewButton}-disabled`;
+const Buttons: React.FC<Props> = ({ project, projects, dispatch, carouselModeButtonStyle }) => {
 
     const { iframeLINK, wireFrameLINK, livelLINK, codeLINK } = project.projectLinks
-    function buttonDisableStyle(value: string | number) {
-        return value ? '' : 'disable-button'
-    }
+
+    const buttonDisableClass = (link: string) => link ? '' : 'disable-button'
 
     return (
         <>
-            <div className={`buttons`}>
+            <div className={`buttons ${carouselModeButtonStyle}`}>
                 <button
-                    className={buttonDisableStyle(livelLINK)}>
+                    disabled={!livelLINK}
+                    onClick={
+                        () => dispatch({
+                            type: 'UPDATE_PROJECT_VIEW_STATUS',
+                            payload: updateCurrentProjectViewStatus(project, projects)
+                        })}>
+
                     <a
+                        className={`button ${buttonDisableClass(livelLINK)}`}
                         href={livelLINK}
-                        className={`button ${toggleFontSize}`}
                         target='_blanck'>
-                        LIVE
+                        Live
                     </a>
                 </button>
 
                 <button
                     disabled={!iframeLINK}
-                    className={`button ${toggleFontSize} ${buttonDisableStyle(iframeLINK)}`}
-                    onClick={
-                        () => dispatch!({
-                            type: 'LOAD_IFRAME',
-                            payload: toggleProjectViewd(project, projects, true, false)
-                        })}>
-                    IFRAME
+                    className={` ${buttonDisableClass(iframeLINK)}`}>
+                    <Link to="/projects/ProjectsCarouselMode">
+                        <span
+                            className='button'
+                            onClick={
+                                () => dispatch!({
+                                    type: 'LOAD_IFRAME',
+                                    payload: toggleProjectViewOptions(project, projects, true, false)
+                                })}>
+                            Iframe
+                        </span>
+                    </Link>
                 </button>
 
                 <button
                     disabled={!wireFrameLINK}
-                    className={`button ${toggleFontSize} ${buttonDisableStyle(wireFrameLINK)}`}
-                    onClick={
-                        () => dispatch!({
-                            type: 'LOAD_WIREFRAME',
-                            payload: toggleProjectViewd(project, projects, false, true)
-                        })}>
-                    WIREFRAME
+                    className={`${buttonDisableClass(wireFrameLINK)}`}>
+                    <Link to="/projects/ProjectsCarouselMode">
+                        <span
+                            className='button'
+                            onClick={
+                                () => dispatch!({
+                                    type: 'LOAD_WIREFRAME',
+                                    payload: toggleProjectViewOptions(project, projects, false, true)
+                                })}>
+                            Wireframe
+                        </span>
+                    </Link>
                 </button>
 
-                <button
-                    className={`${buttonDisableStyle(codeLINK)}`}>
-                    <a
+                <button disabled={!codeLINK}>
+                    <a className={`button ${buttonDisableClass(codeLINK)}`}
                         href={codeLINK}
-                        className={`button ${toggleFontSize}`}
                         target='_blanck'>
-                        CODE
+                        Code
                     </a>
                 </button>
             </div >
-
-            <button
-                disabled={!currentProjectIndex}
-                className={`${buttonVisibility} ${buttonDisableStyle(currentProjectIndex)} prev-button`}
-                onClick={
-                    () => dispatch({
-                        type: 'PREV',
-                        payload: toggleCarouselMode(projects, project, currentProjectIndex - 1)
-                    })}>
-                {'<'}
-            </button>
-
-            <button
-                className={`${buttonVisibility} next-button`}
-                onClick={
-                    () => dispatch({
-                        type: 'NEXT',
-                        payload: toggleCarouselMode(projects, project, currentProjectIndex + 1)
-                    })}>
-                {'>'}
-            </button>
-
-            <button
-                className={`${buttonVisibility} close-button`}
-                onClick={
-                    () => dispatch({
-                        type: 'CLOSE_FRAME',
-                        payload: toggleProjectViewd(project, projects, false, false)
-                    })}>
-                X
-            </button>
         </>
-        //Info button and pop up info window is located in ProjectView.tsx Component.
     )
 }
 

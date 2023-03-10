@@ -1,71 +1,138 @@
-#projectPage {
-    display: flex;
-    justify-content: center;
+#project {
+    display: grid;
+    font-size: clamp(10.36px, 3.8vw, 14px);
+    grid-template-columns: 1fr;
+    padding: 0 1.7em;
+    padding: 1.7em;
+    row-gap: min(25vw, 65px);
+    font-weight: 500;
 }
 
-.viewd {
+#project figure {
+    max-width: 350px;
+    font-weight: 600;
+}
+
+.project-img-container.viewd-marker-enable {
     outline-offset: -2px;
     outline: solid var(--viewd-clr) 3px;
     position: relative;
     z-index: 0;
 }
 
-.viewd::before {
+.project-img-container.viewd-marker-enable::before {
     color: var(--viewd-clr);
     content: 'viewd';
-    font-size: min(4vw, 20px);
+    font-size: 1em;
     left: 0;
     position: absolute;
-    top: -30px;
-}
-
-.not-viewd {
-    border: none;
+    top: -2.5em;
 }
 
 .project-img-container {
-    margin-bottom: min(3vw, 20px);
-    width: 100%;
+    outline: solid white 3px;
 }
 
-#project figure {
-    max-width: 600px;
-    padding-bottom: 80px;
-    width: 90%;
+.project-img, .project-img-container {
+    border-radius: min(1.5vw + 10px, 1em);
+}
+
+.project-img-container, .project-img, #project figure {
+    width: 100%;
 }
 
 .project-img {
     cursor: pointer;
-    display: block;
-    width: 100%;
+    height: min(65vw, 245px);
+    object-fit: cover;
+    vertical-align: middle;
 }
-.disable-project-img{
+
+.disable-project-img {
     pointer-events: none;
 }
 
-#project {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 1200px;
+.project-details {
+    color: white;
+    display: grid;
+    font-size: 1em;
+    font-weight: 400;
+    grid-gap: 10px;
+    width: 100%;
 }
 
-@media all and (min-width:800px) {
+/* This CSS class will be enabled when the user is viewing the project details in the carousel window*/
+.project-details.project-details-static-font-size-enabled {
+    font-size: 14px;
+}
 
+.project-details-viewd * {
+    color: var(--viewd-clr);
+}
+
+.project-description-container {
+    display: grid;
+    grid-gap: 10px;
+    width: 90%;
+}
+
+.project-tools-container {
+    font-size: 12.36px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.6;
+    font-weight: 500;
+}
+
+.project-tools {
+    align-items: flex-start;
+    max-height: 3.1em;
+    overflow: auto;
+    font-weight: 400;
+}
+
+#project figure figcaption {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media all and (min-width:500px) {
     #project {
-        align-items: stretch;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0 8vw;
+        column-gap: min(8vw, 55px);
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
     }
 
-    #project figure {
-        max-width: 450px;
-        width: 45%;
+    .project-img {
+        height: min(30vw, 245px);
     }
 
-    .project-img-container {
-        margin-bottom: min(1.5vw, 20px);
+    .project-details {
+        font-size: clamp(10.36px, 1.88vw, 14px);
+    }
+
+    .project-description {
+        height: 6em;
+        overflow: hidden;
+    }
+
+    .project-tools {
+        align-items: flex-end;
+    }
+}
+
+@media all and (min-width:950px) {
+    #project {
+        column-gap: min(5vw, 55px);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-img {
+        height: min(21.8vw, 245px);
+    }
+
+    .project-details {
+        font-size: clamp(10.36px, 1.18vw, 14px);
     }
 }
