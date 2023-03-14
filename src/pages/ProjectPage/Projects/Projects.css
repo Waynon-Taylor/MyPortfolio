@@ -1,8 +1,12 @@
+:root{
+    --max-font-size:14px;
+    --min-font-size:12.36px;
+}
+
 #project {
     display: grid;
-    font-size: clamp(10.36px, 3.8vw, 14px);
+    font-size: clamp(var(--min-font-size), 3.8vw, var(--max-font-size));
     grid-template-columns: 1fr;
-    padding: 0 1.7em;
     padding: 1.7em;
     row-gap: min(25vw, 65px);
     font-weight: 500;
@@ -61,7 +65,7 @@
     width: 100%;
 }
 
-/* This CSS class will be enabled when the user is viewing the project details in the carousel window*/
+/* project-details-static-font-size-enabled CSS class will be enabled when the user is viewing the project details in the carousel window*/
 .project-details.project-details-static-font-size-enabled {
     font-size: 14px;
 }
@@ -96,7 +100,6 @@
     flex-direction: column;
 }
 
-
 @media all and (min-width:500px) {
     #project {
         column-gap: min(8vw, 55px);
@@ -109,7 +112,7 @@
     }
 
     .project-details {
-        font-size: clamp(10.36px, 1.88vw, 14px);
+        font-size: clamp(var(--min-font-size), 1.88vw, var(--max-font-size));
     }
 
     .project-description {
@@ -133,6 +136,6 @@
     }
 
     .project-details {
-        font-size: clamp(10.36px, 1.18vw, 14px);
+        font-size: clamp(var(--min-font-size), 1.18vw, var(--max-font-size));
     }
 }

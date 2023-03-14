@@ -1,7 +1,7 @@
 import { Project } from "../projectTypes/projectTypes"
 import sortVisualizerImg from '../../../assets/images/sortvisualizer-screenshot-2.png'
 import flappyBirdImg from '../../../assets/images/flappy-bird-display-pic.jpg'
-import portfolioImg from '../../../assets/images/portfolio-img.png'
+import portfolioImg from '../../../assets/images/portfolio-img.jpg'
 
 const projectsList: Project[] = [
     {
@@ -16,7 +16,7 @@ const projectsList: Project[] = [
             codeLINK: 'https://github.com/The-taylord/SortingAlgoVisualizer'
         },
         projectName: 'Sorting Visualizer',
-        projectDescription: 'A web application that illustrates how various sorting algorithms work via some user controls.',
+        projectDescription: ' A web app for visualizing a bunch of different sorting algorithms With the functionality of Speed Control, Array Size Control and more.',
         projectTools: '#typescript #react.js #figma'
     },
     {
@@ -46,7 +46,7 @@ const projectsList: Project[] = [
             codeLINK: 'https://github.com/The-taylord/MyPortfolio'
         },
         projectName: 'Personal Portfolio Website',
-        projectDescription: "This website showcases some of my software engineering projects and is the current website you're on.",
+        projectDescription: "A website that showcase some of my projects and skills as a Front-End Software Engineer.",
         projectTools: '#typescript  #react.js #figma'
     },
 ]
